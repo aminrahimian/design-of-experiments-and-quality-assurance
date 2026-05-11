@@ -2,7 +2,7 @@
 
 Companion R scripts for the lecture notes of IE 1072 at the University of
 Pittsburgh, taught by [Prof. Amin Rahimian](https://aminrahimian.github.io/).
-Each script corresponds to a topic in the notes; the numeric prefix in the
+Each script corresponds to a topic in the notes. The numeric prefix in the
 filename reflects the order in which the topic first appears.
 
 ## What's here
