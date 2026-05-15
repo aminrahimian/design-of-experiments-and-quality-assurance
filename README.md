@@ -1,30 +1,25 @@
 # IE 1072: Design of Experiments and Quality Assurance
 
-Lecture notes and companion R scripts for IE 1072 at the University of
-Pittsburgh, taught by [Prof. Amin Rahimian](https://aminrahimian.github.io/).
+Lecture notes and supporting materials for IE 1072 at the University of Pittsburgh, taught by [Prof. Amin Rahimian](https://aminrahimian.github.io/).
 
-## Lecture notes
+## Contents
 
-The unified course notes are at
-[`IE1072_unified_notes.pdf`](IE1072_unified_notes.pdf).
-They cover probability foundations, sampling and estimation, limit
-theorems, confidence intervals, hypothesis testing, ANOVA, 2ᵏ and
-2ᵏ⁻ᵖ factorial designs, lot-by-lot acceptance sampling, and Shewhart
-control charts. Each topic links to the corresponding R companion
-script below.
+- **[`IE1072_unified_notes.pdf`](IE1072_unified_notes.pdf)**: the unified course notes. Covers probability foundations, sampling and estimation, limit theorems, confidence intervals, hypothesis testing, ANOVA, 2ᵏ factorial and 2ᵏ⁻ᵖ fractional designs, lot-by-lot acceptance sampling, and Shewhart control charts. 58 Practice problems with inline R code snippets.
 
-## R companion scripts
+- **[`data/`](data/)**: Excel datasets referenced by Practice problems.
+  - `Cap Torque Data.xlsx` (Practices 6, 18)
+  - `Shipping.xlsx` (Practices 7, 19)
+  - `Soft Drink Experiment.xlsx` (Practice 25)
 
-Each script corresponds to a topic in the notes. The numeric prefix in
-the filename reflects the order in which the topic first appears.
+- **[`references/`](references/)**: lookup tables and procedure summaries.
+  - `AcceptanceSamplingControlChartsTables.pdf`: required for Practices 31-35, 44, and 46. Contains MIL-STD-105E master tables (pp. 1-4), MIL-STD-414 master tables (pp. 5-6), and Appendix VI control chart constants $A_3, B_3, B_4, c_4$ etc. (p. 7).
+  - `Military Standard 105E.pdf`, `Military Standard 414.pdf`: slide-deck procedure summaries. Optional supplementary material for Practices 30-35.
 
-- `00`–`07`: probability foundations, sampling and estimation, limit theorems.
-- `08`–`12`: confidence intervals, hypothesis testing, one- and two-way ANOVA.
-- `13`–`14`: 2ᵏ factorial and 2ᵏ⁻ᵖ fractional factorial designs.
-- `15`–`16`: lot-by-lot acceptance sampling and MIL-STD-105E.
-- `17`–`18`: Shewhart variables and attributes control charts.
+- **[`R_files/`](R_files/)**: standalone R companion scripts referenced inline throughout the notes (numbered `00`-`18`, one per topic). Each Practice that ships with an R companion links to the corresponding script here.
 
-## Dependencies
+## Requirements
+
+R is assumed throughout the notes both for distribution calculations (`pnorm`, `pt`, `pf`, `pchisq`, ...) and for the data-analysis problems. Install the packages used in the inline R snippets:
 
 ```r
 install.packages(c(
@@ -33,6 +28,17 @@ install.packages(c(
   "pid", "AcceptanceSampling", "AQLSchemes", "qicharts2"
 ))
 ```
+
+Open R with the repository root as the working directory so the relative paths in the notes (`data/...`, `references/...`) resolve correctly.
+
+## Practice 4 (Benford's Law) external data
+
+Practice 4 asks you to test Benford's Law on a public dataset of your own choice. Suggested sources from the original assignment:
+
+- NYT COVID-19 case data: <https://github.com/nytimes/covid-19-data>
+- 2020 US county election results: <https://github.com/tonmcg/US_County_Level_Election_Results_08-20>
+
+Any count-style dataset that spans several orders of magnitude works.
 
 ## License
 
